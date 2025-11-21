@@ -1,0 +1,7 @@
+{
+    "pgm_name": "ZMMIM",
+    "inc_name": "ZMMIMI01",
+    "type": "PROG",
+    "name": "MAIN",
+    "code": "DATA ls_mseg TYPE mseg.\nFIELD-SYMBOL(<fs_mkpf>) TYPE mkpf.\nSELECT * FROM mard INTO TABLE lt_mard.\nSELECT * FROM mara INTO TABLE lt_mara.\nUPDATE mseg SET x = 1.\nDELETE FROM mard WHERE matnr = '100'.\nlo_obj->method( exporting iv_tab = mssl ).\nWRITE: / ls_mseg-matnr."
+}
